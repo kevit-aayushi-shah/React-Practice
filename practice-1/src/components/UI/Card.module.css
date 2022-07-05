@@ -1,0 +1,14 @@
+.card{
+    background-color: white;
+    position: relative;
+    margin: auto;
+    max-width: 46%;
+    box-shadow: 30px;
+    border-radius: 5px;
+    font-family: sans-serif;    
+}
+p{
+    font-size: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
