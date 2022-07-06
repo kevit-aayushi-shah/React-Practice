@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Display from "./components/Display";
 import Form from "./components/Form";
-import Card from "./components/UI/Card";
 
 const App = () => {
   const [items, setItems] = useState([]);
@@ -9,7 +8,7 @@ const App = () => {
   const passData = (data) => {
     // console.log(data);
     setItems((prevItems) => {
-      return [...prevItems, data];
+      return [...prevItems, { name: data.name, age: data.age, id: data.id }];
     });
   };
   // console.log(items);
@@ -18,9 +17,7 @@ const App = () => {
       <Form onSubmit={passData} />
       {items.map((item) => {
         return (
-          <Card>
-            <Display id={item.id}name={item.name} age={item.age} />
-          </Card>
+          <Display id={item.id} name={item.name} age={item.age} key={item.id} />
         );
       })}
     </div>
