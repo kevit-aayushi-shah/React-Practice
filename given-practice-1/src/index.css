@@ -1,0 +1,10 @@
+body{
+    background-color:rgb(253, 253, 179);
+    color: rgb(219, 17, 51);
+}
+p{
+    font-size: 35px;
+    position: relative;
+    margin: auto;
+    width: 8%;
+}

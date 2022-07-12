@@ -39,7 +39,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetchMoviesHandler();
+    fetchMoviesHandler(); 
   }, [fetchMoviesHandler]);
 
   async function addMovieHandler(movie) {
