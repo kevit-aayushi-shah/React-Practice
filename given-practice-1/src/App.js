@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, Fragment } from "react";
 import "./App.css";
-import Input from "./components/Input";
+import Content from "./components/Content";
 function App() {
   const [name, setName] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -42,7 +42,7 @@ function App() {
 
   return (
     <Fragment>
-      <Input name={name} />
+      <Content name={name} />
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
     </Fragment>
