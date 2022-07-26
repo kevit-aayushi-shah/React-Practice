@@ -1,0 +1,57 @@
+form{
+    position: relative;
+    width: 20%;
+    margin: auto;
+    margin-top: 2em;
+    padding: 3rem;
+    background-color: rgb(218, 104, 161);
+    border-radius: 1rem;
+    box-shadow: rgb(199, 103, 191) 0px 2px 8px 0px;
+    color:whitesmoke
+}
+.select-text{
+    position: relative;
+    width: 40%;
+    margin: auto;
+    padding: 2em;
+    color: green;
+}
+label{
+    font-size: 18px;
+    
+}
+.name{
+    height: 25px
+}
+input{
+    outline: none;
+    border: none;
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+.buttons{
+    display:flex;
+    width: 40%;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+
+button{
+  background: white;
+  border-radius: 8px;
+  border-style: 1px;
+  box-sizing: border-box;
+  color: rgb(255, 105, 180);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  height: 4rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+}
+
+button:hover {
+  box-shadow: rgba(44, 33, 126, 0.5) 0 1px 30px;
+}
