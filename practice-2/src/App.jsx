@@ -9,24 +9,29 @@ import englishData from "./EnglishQuizData";
 
 
 function App() {
-  const [data,setData]=useState('')
+  const [data, setData] = useState("");
+  const[name,setName]=useState("")
   const checkLanguageHandler = (language) => {
     if (language === "hindi") {
-     setData(hindiData)
+      setData(hindiData);
     } else if (language === "english") {
-      setData(englishData)
+      setData(englishData);
     }
   };
+  const requiredName=(name)=>{
+    setName(name)
+  }
+
   return (
     <Fragment>
       <Header />
       <Routes>
-        <Route path="/" element={<Form language={checkLanguageHandler} />} />
-        <Route path="/english" element={<Quiz quizData={data}/>} />
-        <Route path="/hindi" element={<Quiz quizData={data}/>} />
+        <Route path="/" element={<Form language={checkLanguageHandler} name={requiredName}/>} />
+        <Route path="/english" element={<Quiz quizData={data} name={name}/>}/>
+        <Route path="/hindi" element={<Quiz quizData={data} name={name}/>} />
       </Routes>
     </Fragment>
   );
-}
+} 
 
 export default App;

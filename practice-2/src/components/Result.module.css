@@ -1,7 +1,12 @@
 .whole-result{
-   width: 10%;
+    width: 50%;
     margin: 2rem auto;
     background-color: rgb(218, 104, 161);
     color: white;
     padding: 1rem 1rem;
+    text-align: center;
+}
+.go-to-home-button{
+   width: 8%;
+   margin: auto;
 }

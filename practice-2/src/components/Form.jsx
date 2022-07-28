@@ -1,45 +1,78 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Form.module.css";
 
 const Form = (props) => {
-  const navigate=useNavigate()
+  const [enteredName, setEnteredName] = useState("");
+  const [enteredNameTouched, setEnteredNameTouched] = useState(false);
 
-  const englishClickHandler = (event) => {
+  const enteredNameIsValid = enteredName.trim() !== "";
+  const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
+
+  const nameInputChangeHandler = (event) => {
+    setEnteredName(event.target.value);
+    const name = event.target.value;
+    props.name(name);
+  };
+
+  const nameInputBlurHandler = () => {
+    setEnteredNameTouched(true);
+  };
+
+  const formSubmissionHandler = (event) => {
     event.preventDefault();
-    const english=event.target.value
-    props.language(english)
-    navigate('/english')
+
+    setEnteredNameTouched(true);
+    if (!enteredNameIsValid) {
+      return;
+    }
+    console.log(enteredName);
+    setEnteredName("");
+    setEnteredNameTouched(false);
+  };
+  const navigate = useNavigate();
+  const englishClickHandler = (event) => {
+    const english = event.target.value;
+    props.language(english);
+    navigate("/english");
   };
   const hindiClickHandler = (event) => {
-    event.preventDefault();
-    const hindi = event.target.value
-    props.language(hindi)
-    navigate('/hindi')
+    const hindi = event.target.value;
+    props.language(hindi);
+    navigate("/hindi");
   };
+
   return (
     <Fragment>
-      <form>
+      <form onSubmit={formSubmissionHandler}>
+        <p>Please Fill all the Data to start the Quiz</p>
         <label>Your Name</label>
-        <br></br>
-        <input className={classes.name}></input>
-        <br></br>
-        <br></br>
+        <input
+          type="text"
+          id="name"
+          onChange={nameInputChangeHandler}
+          onBlur={nameInputBlurHandler}
+          value={enteredName}
+        />
+        {nameInputIsInvalid && (
+          <p>Name must not be empty.</p>
+        )}
         <label htmlFor="gender">Gender:</label>
         <br></br>
-        <input type="radio" name="gender" />
-        <label htmlFor="male">Male</label>
+        <input type="radio" name="gender" required="required" />
+        <label htmlFor="male" className={classes["gender-label"]}>
+          Male
+        </label>
         <br></br>
         <input type="radio" name="gender" />
-        <label htmlFor="female">Female</label>
-        <br></br>
+        <label htmlFor="female" className={classes["gender-label"]}>
+          Female
+        </label>
         <br></br>
         <label>Educational Qualification</label>
         <br></br>
-        <select>
-          <option defaultChecked disabled hidden>
-            Choose here
-          </option>
+        <select required="required">
+          <option>Choose here</option>
           <option value="Primary">Primary</option>
           <option value="Secondary">Secondary</option>
           <option value="Diploma">Diploma</option>
@@ -47,20 +80,32 @@ const Form = (props) => {
           <option value="Graduate">Graduate</option>
         </select>
         <br></br>
-        <br></br>
         <label>Birth Date</label>
         <br></br>
-        <input type="date"></input>
+        <input type="date"required="required"></input>
+        <br></br>
+        <br></br>
+        <p>Select Your Language and Start</p>
+        <div className={classes.buttons}>
+          <button
+            disabled={nameInputIsInvalid || !enteredNameIsValid}
+            type="submit"
+            onClick={englishClickHandler}
+            value="english"
+          >
+            Start With English
+          </button>
+          <br></br>
+          <button
+            disabled={nameInputIsInvalid || !enteredNameIsValid}
+            type="submit "
+            onClick={hindiClickHandler}
+            value="hindi"
+          >
+            Start With Hindi
+          </button>
+        </div>
       </form>
-      <h2 className={classes['select-text']}>Select Your Language And Start The Quiz</h2>
-      <div className={classes.buttons}>
-        <button type="submit" onClick={englishClickHandler} value='english'>
-          Start With English
-        </button>
-        <button type="submit" onClick={hindiClickHandler} value='hindi'>
-          Start With Hindi
-        </button>
-      </div>
     </Fragment>
   );
 };
