@@ -4,24 +4,18 @@ import Result from "../components/Result";
 
 const Quiz = (props) => {
   const name = props.name;
+  const quizData=props.quizData
   const [currentQues, setCurrentQues] = useState(0);
-  const [score, setScore] = useState(0);
   const [selectedAns, setSelectedAns] = useState([]);
 
   if (currentQues + 1 > 5) {
-    return <Result score={score} name={name} selectedAns={selectedAns}/>;
+    return <Result name={name} selectedAns={selectedAns} quizData={quizData}/>;
   }
 
   const forwardClickHandler = (event) => {
     event.preventDefault();
     const nextQues = currentQues + 1;
     setCurrentQues(nextQues);
-    selectedAns.map((answer) => {
-      if (answer === props.quizData[currentQues].answer) {
-        const updateScore = score + 1;
-        setScore(updateScore);
-      }
-    });
   };
   const backwardClickHandler = (event) => {
     event.preventDefault();
@@ -50,9 +44,9 @@ const Quiz = (props) => {
             Question {currentQues + 1}
           </h1>
           <p className={classes["question-text"]}>
-            {props.quizData[currentQues].question}
+            {quizData[currentQues].question}
           </p>
-          {props.quizData[currentQues].options.map((option, i) => {
+          {quizData[currentQues].options.map((option, i) => {
             return (
               <button
                 id={i}
