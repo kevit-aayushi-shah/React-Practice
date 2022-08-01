@@ -15,7 +15,7 @@
 }
 .question-heading {
   position: relative;
-  width: 40%;
+  width: 70%;
   margin: auto;
   color: rgb(218, 104, 161);
 }
@@ -40,3 +40,4 @@
   color: white;
   padding-bottom: 1.5em;
 }
+

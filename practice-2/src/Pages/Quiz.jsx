@@ -1,17 +1,17 @@
 import React, { Fragment, useState } from "react";
-import classes from "./Question.module.css";
+import classes from "./Quiz.module.css";
 import Result from "../components/Result";
 
 const Quiz = (props) => {
   const name = props.name;
-  const quizData=props.quizData
+  const quizData = props.quizData;
   const [currentQues, setCurrentQues] = useState(0);
   const [selectedAns, setSelectedAns] = useState([]);
 
   if (currentQues + 1 > 5) {
-    return <Result name={name} selectedAns={selectedAns} quizData={quizData}/>;
+    return <Result name={name} selectedAns={selectedAns} quizData={quizData} />;
   }
-
+  
   const forwardClickHandler = (event) => {
     event.preventDefault();
     const nextQues = currentQues + 1;
@@ -29,7 +29,6 @@ const Quiz = (props) => {
     stateToUpdate[currentQues] = event.target.value;
     setSelectedAns(stateToUpdate);
   };
-  
   return (
     <Fragment>
       <div className={classes["whole-content"]}>
@@ -41,7 +40,7 @@ const Quiz = (props) => {
         </button>
         <div className={classes.question}>
           <h1 className={classes["question-heading"]}>
-            Question {currentQues + 1}
+            Question {currentQues + 1} out of {quizData.length}
           </h1>
           <p className={classes["question-text"]}>
             {quizData[currentQues].question}
@@ -68,6 +67,7 @@ const Quiz = (props) => {
         <button
           className={classes["control-button"]}
           onClick={forwardClickHandler}
+          disabled={selectedAns.length === currentQues}
         >
           ➡
         </button>

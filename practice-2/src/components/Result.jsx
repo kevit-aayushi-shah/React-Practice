@@ -10,7 +10,6 @@ const Result = (props) => {
   var array1 = props.quizData;
   var array2 = props.selectedAns;
   const found = array1.filter((val, index) => {
-    console.log("index", index); // Stops at array1.length - 1
     return array2.includes(val.answer);
   });
   return (
@@ -20,22 +19,37 @@ const Result = (props) => {
         <h2>Name: {props.name}</h2>
         <h2>Score: {found.length}</h2>
       </div>
-      <div className={classes.answers}>
-        <div>
-          <h3>Your Answers</h3>
-          {props.selectedAns.map((ans) => {
-            return <p>{ans}</p>;
-          })}
-        </div>
-        <div>
-          <h3>Correct Answers</h3>
-          {props.quizData.map(ans=>{
-            return<p>{ans.answer}</p>
-          })}
-        </div>
+      <div>
+        <table className={classes.table}>
+          <thead>
+            <tr className={classes.headers}>
+              <th>Question</th>
+              <th>Your Answers</th>
+              <th>Correct Answers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                {props.selectedAns.map((ans, i) => {
+                  return <p key={i}>Q{i + 1}</p>;
+                })}
+              </td>
+              <td>
+                {props.selectedAns.map((ans, i) => {
+                  return <p key={i}>{ans}</p>;
+                })}
+              </td>
+              <td>
+                {props.quizData.map((ans, i) => {
+                  return <p key={i}>{ans.answer}</p>;
+                })}
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <br/>
-      <br/>
+      <br />
       <div className={classes["go-to-home-button"]}>
         <button onClick={homeNavigateHandler}>Go to home</button>
       </div>
