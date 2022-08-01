@@ -32,6 +32,6 @@ function App() {
       </Routes>
     </Fragment>
   );
-} 
+}
 
 export default App;
