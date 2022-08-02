@@ -26,3 +26,9 @@
 td{
     padding-left: 2rem;
 }
+.wrong-answers{
+    color: red;
+}
+.correct-answer{
+    color: green;
+}

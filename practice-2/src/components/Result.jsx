@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Result.module.css";
 
@@ -37,12 +37,17 @@ const Result = (props) => {
               </td>
               <td>
                 {props.selectedAns.map((ans, i) => {
-                  return <p key={i}>{ans}</p>;
+                  return <p key={i}  className={`${classes["wrong-answers"]} ${
+                    classes[
+                     ans===props.quizData[i].answer &&
+                        "correct-answer"
+                    ]
+                  }`}>{ans}</p>
                 })}
               </td>
               <td>
                 {props.quizData.map((ans, i) => {
-                  return <p key={i}>{ans.answer}</p>;
+                  return <p key={i}>{ans.answer}</p>
                 })}
               </td>
             </tr>
