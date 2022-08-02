@@ -47,6 +47,7 @@ const Form = (props) => {
       <form onSubmit={formSubmissionHandler}>
         <p>Please Fill all the Data to start the Quiz</p>
         <label>Your Name</label>
+        <br/>
         <input
           type="text"
           id="name"
@@ -54,6 +55,7 @@ const Form = (props) => {
           onBlur={nameInputBlurHandler}
           value={enteredName}
         />
+        <br/>
         {nameInputIsInvalid && (
           <p>Name must not be empty.</p>
         )}

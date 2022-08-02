@@ -1,6 +1,6 @@
 .whole-content {
   display: flex;
-  width: 38%;
+  max-width: 40%;
   margin: auto;
   margin-top: 2rem;
 }
@@ -40,4 +40,13 @@
   color: white;
   padding-bottom: 1.5em;
 }
-
+.message{
+  width: 15%;
+  margin: auto;
+  color: red;
+}
+@media (min-width:2560px ) {
+  .whole-content{
+    width: 25%;
+  }
+}

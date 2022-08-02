@@ -7,15 +7,21 @@ const Quiz = (props) => {
   const quizData = props.quizData;
   const [currentQues, setCurrentQues] = useState(0);
   const [selectedAns, setSelectedAns] = useState([]);
+  const [disabled, setDisabled] = useState(false);
 
   if (currentQues + 1 > 5) {
     return <Result name={name} selectedAns={selectedAns} quizData={quizData} />;
   }
-  
+
   const forwardClickHandler = (event) => {
     event.preventDefault();
-    const nextQues = currentQues + 1;
-    setCurrentQues(nextQues);
+    if (selectedAns.length === currentQues) {
+      setDisabled(true);
+      setCurrentQues(currentQues);
+    } else {
+      const nextQues = currentQues + 1;
+      setCurrentQues(nextQues);
+    }
   };
   const backwardClickHandler = (event) => {
     event.preventDefault();
@@ -28,6 +34,7 @@ const Quiz = (props) => {
     const stateToUpdate = [...selectedAns];
     stateToUpdate[currentQues] = event.target.value;
     setSelectedAns(stateToUpdate);
+    setDisabled(false);
   };
   return (
     <Fragment>
@@ -67,13 +74,16 @@ const Quiz = (props) => {
         <button
           className={classes["control-button"]}
           onClick={forwardClickHandler}
-          disabled={selectedAns.length === currentQues}
+          disabled={disabled}
         >
           ➡
         </button>
       </div>
+      <br/>
+     { disabled && <p className={classes.message}>Please Select an Option To Continue</p>}
     </Fragment>
   );
 };
 
 export default Quiz;
+ 

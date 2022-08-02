@@ -1,6 +1,6 @@
 form{
     position: relative;
-    width: 21%;
+    width: 20%;
     margin: auto;
     margin-top: 2em;
     padding: 3rem;
@@ -41,8 +41,10 @@ input{
     justify-content: space-evenly;  
 }
 button:disabled{
-    background-color: rgb(235, 223, 223);
-    color:white
+    background-color: rgb(172, 163, 163);
+    color:white;
+    opacity:0.5;
+    cursor: not-allowed;
 }
 
 button{
@@ -63,3 +65,10 @@ button{
 button:hover {
   box-shadow: rgba(44, 33, 126, 0.5) 0 1px 30px;
 }
+
+@media (min-width:2560px ) {
+    form{
+      width: 15%;
+    }
+  }
+  
