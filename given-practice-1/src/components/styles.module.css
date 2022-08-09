@@ -38,12 +38,15 @@ li:hover {
 input[type="search"]::placeholder {
   color: #bbb;
 }
-.input-area{
-    display: flex;
-    align-items: center;
-    background-color: white;
-   padding: 0 10px;
+.input-area {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 25%;
 }
-.input-area:focus{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+.input-area:focus {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

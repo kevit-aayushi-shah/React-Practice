@@ -1,0 +1,70 @@
+.input-area {
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-input {
+  width: 500px;
+  height: 33px;
+  font-size: 20px;
+  border: 0;
+}
+.search-input:focus {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  outline: none;
+}
+input[type="search"]::placeholder {
+  color: #bbb;
+}
+.product-list {
+  display: grid;
+  justify-items: center;
+  width: 95%;
+  margin: auto;
+  margin-top: 1rem;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: #cc822d;
+  background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+  border-radius: 10px;
+}
+.product-card {
+  background-color: white;
+  margin: 2rem 0.5rem;
+  padding: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.product-img {
+  width: 20em;
+  height: 15em;
+  border-radius: 20px;
+}
+.product-title{
+  padding-top: 1rem;
+  color: rgb(8, 6, 128);
+  font-weight: 900;
+
+}
+.product-price{
+  color:green;
+  font-weight: 500;
+}
+button {
+  margin-top: 0rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: rgb(8, 6, 128);
+  background-color: white;
+  border: 1px solid rgb(8, 6, 128);
+  border-radius: 4px;
+  padding: 0.5rem 2.5rem;
+}
+ button:hover {
+  background-color: rgb(8, 6, 128);
+  color: white;
+}
+.add-to-cart-button{
+  margin-left: 9rem;
+}

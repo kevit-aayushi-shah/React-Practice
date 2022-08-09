@@ -1,0 +1,40 @@
+.grand-total{
+  color:white;
+  margin: 3rem auto;
+  width: 20%;
+}
+
+.cart-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr  ;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 3rem auto;
+}
+.cart-product {
+  background-color: white;
+  margin: 1rem;
+  border-radius: 10px;
+
+}
+.cart-product img {
+  width: 25em;
+  height: 15em;
+}
+.product-title {
+  padding: 1rem;
+  color: rgb(8, 6, 128);
+}
+.product-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-bottom: 1rem;
+}
+.net-amount{
+  padding-left: 8rem;
+  color: green;
+  font-weight: 900;
+  padding: 1rem ;
+}

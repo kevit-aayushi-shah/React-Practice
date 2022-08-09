@@ -1,0 +1,35 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 3px 0 #cc822d, 0 6px 8px 0 #cc822d;
+  background-color: #cc822d;
+  background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
+}
+.logo-img {
+  border-radius: 50%;
+  width: 25%;
+  height: 25%;
+  padding: 1em;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+.buttons {
+  cursor: pointer;
+  font-weight: 500;
+  color: rgb(8, 6, 128);
+  background-color: white;
+  border: 1px solid rgb(8, 6, 128);
+  border-radius: 4px;
+  padding: 0.5rem 2.5rem;
+  margin: 0 0.5em;
+}
+.buttons:hover {
+  background-color: rgb(8, 6, 128);
+  color: white;
+}
