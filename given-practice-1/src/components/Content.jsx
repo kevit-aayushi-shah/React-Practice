@@ -4,7 +4,8 @@ import classes from "./styles.module.css";
 import SearchIcon from '@mui/icons-material/Search';
 const Content = (props) => {
   const users = props.name;
-  const [filteredUsers, setFilteredUsers] = useState(props.name);
+  console.log(users)
+  const [filteredUsers, setFilteredUsers] = useState(users);
   const [searchTerm, setSearchTerm] = useState("");
   const [searching, setSearching] = useState(false);
 

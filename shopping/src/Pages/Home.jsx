@@ -37,10 +37,6 @@ const Home = () => {
               src="https://images.pexels.com/photos/1586973/pexels-photo-1586973.jpeg?auto=compress&cs=tinysrgb&w=1600"
               alt="Second slide"
             />
-            {/* <Carousel.Caption>
-            <h3 className={classes.caption}>All range of Products available</h3>
-            <p>Explore Great Variety of Products</p>
-          </Carousel.Caption> */}
           </Carousel.Item>
           <Carousel.Item interval={2800}>
             <img

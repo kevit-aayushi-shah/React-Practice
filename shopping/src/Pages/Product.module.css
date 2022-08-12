@@ -51,6 +51,12 @@ input[type="search"]::placeholder {
   color:green;
   font-weight: 500;
 }
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 button {
   margin-top: 0rem;
   cursor: pointer;

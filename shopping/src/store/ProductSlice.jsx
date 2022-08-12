@@ -29,7 +29,7 @@ export function fetchProducts() {
   return async function fetchProductsThunk(dispatch, getState) {
     dispatch(setStatus(STATUSES.LOADING));
     try {
-      const res = await fetch("https://dummyjson.com/products");
+      const res = await fetch(`https://dummyjson.com/products/`);
       const data = await res.json();
       dispatch(setProducts(data.products));
       dispatch(setStatus(STATUSES.IDLE));

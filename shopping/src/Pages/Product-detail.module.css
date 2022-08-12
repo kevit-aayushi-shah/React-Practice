@@ -1,0 +1,25 @@
+.whole-detail { 
+  margin-top: 4em;
+}
+.carousel {
+  width: 40%;
+  height: 50%;
+  margin: 4rem auto;
+}
+.carousel-img {
+  width: 100%;
+  height: 28em;
+  border-radius: 2em;
+}
+.detail-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

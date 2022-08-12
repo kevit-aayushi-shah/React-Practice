@@ -11,6 +11,15 @@ const Navbar = () => {
   const onCartPageDisplay=()=>{
     navigate('/cart')
   }
+
+  const logoutHandler=()=>{
+    localStorage.removeItem('userLogin')
+    navigate('/')
+  }
+
+  const profileHandler=()=>{
+    navigate('/profile')
+  }
   return (
     <Fragment>
       <div className={classes.header}>
@@ -20,8 +29,8 @@ const Navbar = () => {
         </div>
         <div className={classes["header-buttons"]}>
           <button className={classes.buttons} onClick={onCartPageDisplay}>🛒 Cart ({items.totalQuantity})</button>
-          <button className={classes.buttons}>Profile</button>
-          <button className={classes.buttons}>Logout</button>
+          <button className={classes.buttons} onClick={profileHandler}>Profile</button>
+          <button className={classes.buttons} onClick={logoutHandler}>Logout</button>
         </div>
       </div>
     </Fragment>
