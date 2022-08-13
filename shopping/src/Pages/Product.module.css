@@ -56,21 +56,6 @@ input[type="search"]::placeholder {
   justify-content: center;
   align-items: center;
 }
-
-button {
-  margin-top: 0rem;
-  cursor: pointer;
-  font-weight: 500;
-  color: rgb(8, 6, 128);
-  background-color: white;
-  border: 1px solid rgb(8, 6, 128);
-  border-radius: 4px;
-  padding: 0.5rem 2.5rem;
-}
- button:hover {
-  background-color: rgb(8, 6, 128);
-  color: white;
-}
 .add-to-cart-button{
   margin-left: 9rem;
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Login.module.css";
+import Button from "../UI/Button";
 
 const SignUp = () => {
   const [input, setInput] = useState({
@@ -101,9 +102,9 @@ const SignUp = () => {
           <br />
         </div>
         <div className={classes.actions}>
-          <button type="submit" onClick={createNewAccountHandler}>
+          <Button type="submit" onClick={createNewAccountHandler}>
             Create
-          </button>
+          </Button>
         </div>
       </form>
     </section>

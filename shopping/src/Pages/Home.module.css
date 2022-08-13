@@ -34,22 +34,8 @@
   justify-content: center;
   margin-top: 4rem;
 }
-.shop-now-button {
-	color: rgb(8, 6, 128);
-	text-decoration: none;
-	background: #ffffff;
-	padding: 1rem 5rem;
-	border: 1px solid rgb(8, 6, 128);
-	display: inline-block;
-	transition: all 0.4s ease 0s;
-  border-radius: 2rem;
-  font-weight: 900;
-  font-size: 1.4rem;
-}
-
-.shop-now-button:hover {
-	color: #ffffff;
-	background: rgb(8, 6, 128);
-	transition: all 0.4s ease 0s;
-  font-weight: 800;
+.shop-now-button{
+  padding: 1rem 6rem;
+  border-radius: 50px;
+  font-size: 18px;
 }

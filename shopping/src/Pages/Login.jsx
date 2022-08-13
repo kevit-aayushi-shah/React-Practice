@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import classes from "./Login.module.css";
 import { useState } from "react";
+import Button from "../UI/Button";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -60,14 +61,14 @@ const Login = () => {
           <br />
         </div>
         <div className={classes.actions}>
-          <button type="submit" onClick={validation}>
+          <Button type="submit" onClick={validation}>
             Login
-          </button>
+          </Button>
           <br />
           <p>Do not have an Account?</p>
-          <button type="button" onClick={createNewAccountHandler}>
+          <Button type="button" onClick={createNewAccountHandler}>
             Create new account
-          </button>
+          </Button>
         </div>
       </form>
     </section>

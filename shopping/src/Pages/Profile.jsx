@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Login.module.css";
+import Button from "../UI/Button";
 
 const Profile = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const userArray = localStorage.getItem("userData");
   const userData = JSON.parse(userArray);
   const [input, setInput] = useState({
@@ -21,7 +22,7 @@ const Profile = () => {
     event.preventDefault();
     localStorage.setItem("userData", JSON.stringify([input]));
     alert("Data Updated SuccessFully");
-    navigate('/products')
+    navigate("/products");
   };
 
   const getDataHandler = (event) => {
@@ -34,9 +35,9 @@ const Profile = () => {
     });
   };
 
-  const backHandler=()=>{
-    navigate('/products')
-  }
+  const backHandler = () => {
+    navigate("/products");
+  };
 
   return (
     <section className={classes.auth}>
@@ -99,10 +100,11 @@ const Profile = () => {
           <br />
         </div>
         <div className={classes.actions}>
-          <button type="submit" onClick={updateAccountHandler}>
+          <Button type="submit" onClick={updateAccountHandler}>
             Update
-          </button><br/>
-          <button onClick={backHandler}> Back</button>
+          </Button>
+          <br />
+          <Button onClick={backHandler}> Back</Button>
         </div>
       </form>
     </section>

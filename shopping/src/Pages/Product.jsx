@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Button from "../UI/Button";
 
 const Product = () => {
   const [products, setProduct] = useState([]);
@@ -41,7 +42,7 @@ const Product = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setSearching(false);
-    }, 0.1);
+    }, 100);
     return () => {
       clearTimeout(timer);
     };
@@ -118,12 +119,12 @@ const Product = () => {
                   <h5 className={classes["product-title"]}>{product.title}</h5>
                   <h5 className={classes["product-price"]}>${product.price}</h5>
                 </div>
-                <button
+                <Button
                   className={classes["add-to-cart-button"]}
                   onClick={() => onAddHandler(product)}
                 >
                   Add to cart
-                </button>
+                </Button>
               </div>
             );
           })}

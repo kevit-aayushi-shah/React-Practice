@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../components/Navbar";
 import classes from "./cart.module.css";
 import { remove, add } from "../store/CartSlice";
+import Button from "../UI/Button";
 
 const Cart = () => {
   const products = useSelector((state) => state.cart.items);
@@ -42,9 +43,9 @@ const Cart = () => {
                   <h6>${product.price}</h6>
                 </div>
                 <div className={classes["product-quantity"]}>
-                  <button onClick={() => onRemoveHandler(product)}>-</button>
+                  <Button onClick={() => onRemoveHandler(product)}>-</Button>
                   <p>{product.quantity}</p>
-                  <button onClick={() => onAddHandler(product)}>+</button>
+                  <Button onClick={() => onAddHandler(product)}>+</Button>
                 </div>
                 <h5 className={classes["net-amount"]}>
                   Net Price: ${product.totalPrice}

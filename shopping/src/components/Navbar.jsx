@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import classes from './Navbar.module.css'
 import logo from "/home/kevit/Documents/React Learning/shopping/src/images/logo.png";
+import Button from "../UI/Button";
 
 const Navbar = () => {
   const items=useSelector((state)=>state.cart);
@@ -28,9 +29,9 @@ const Navbar = () => {
           <h3>Shopping</h3>
         </div>
         <div className={classes["header-buttons"]}>
-          <button className={classes.buttons} onClick={onCartPageDisplay}>🛒 Cart ({items.totalQuantity})</button>
-          <button className={classes.buttons} onClick={profileHandler}>Profile</button>
-          <button className={classes.buttons} onClick={logoutHandler}>Logout</button>
+          <Button className={classes.buttons} onClick={onCartPageDisplay}>🛒 Cart ({items.totalQuantity})</Button>
+          <Button className={classes.buttons} onClick={profileHandler}>Profile</Button>
+          <Button className={classes.buttons} onClick={logoutHandler}>Logout</Button>
         </div>
       </div>
     </Fragment>

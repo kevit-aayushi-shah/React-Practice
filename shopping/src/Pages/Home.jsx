@@ -3,6 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 import { useNavigate } from "react-router-dom";
 import classes from "./Home.module.css";
 import logo from "/home/kevit/Documents/React Learning/shopping/src/images/logo.png";
+import Button from "../UI/Button";
 
 const Home = () => {
   const navigate=useNavigate()
@@ -16,7 +17,7 @@ const Home = () => {
         <h1>Shopping</h1>
       </div>
       <div className={classes['home-button']}>
-      <button className={classes['shop-now-button']} onClick={shopNowHandler}>🛒 SHOP NOW</button>
+      <Button className={classes['shop-now-button']} onClick={shopNowHandler}>🛒 SHOP NOW</Button>
       </div>
       <div className={classes["carousel-content"]}>
         <Carousel className={classes.carousel}>
