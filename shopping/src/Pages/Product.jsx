@@ -75,8 +75,6 @@ const Product = () => {
     setIsLoading(false);
     fetchProduct();
   };
-
-  console.log(skip);
   console.log(products);
 
   return (
@@ -104,8 +102,8 @@ const Product = () => {
       <InfiniteScroll
         dataLength={products.length}
         next={getMoreData}
-        hasMore={true}
-        loader={<h4>Loading...</h4>}
+        hasMore={products.length < 100}
+        loader={<p>Loading...</p>}
       >
         <div className={classes["product-list"]}>
           {filteredProducts.map((product, i) => {
