@@ -35,15 +35,15 @@ const SignUp = () => {
     }
   };
 
-  const getDataHandler = (event) => {
-    const { value, name } = event.target;
-    setInput(() => {
-      return {
-        ...input,
-        [name]: value,
-      };
-    });
-  };
+    const getDataHandler = (event) => {
+      const { value, name } = event.target;
+      setInput(() => {
+        return {
+          ...input,
+          [name]: value,
+        };
+      });
+    };
 
   return (
     <section className={classes.auth}>

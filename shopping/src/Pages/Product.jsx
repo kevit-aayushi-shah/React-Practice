@@ -2,21 +2,28 @@ import React, { Fragment, useEffect, useState } from "react";
 import classes from "./Product.module.css";
 import Navbar from "../components/Navbar";
 import { add } from "../store/CartSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts, STATUSES } from "../store/ProductSlice.jsx";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "../UI/LoadingSpinner";
 
 const Product = () => {
+  const [products, setProduct] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { data: products, status } = useSelector((state) => state.product);
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [searchTerm, setSearchTerm] = useState("");
   const [searching, setSearching] = useState(false);
+
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+    const fetchProduct = async () => {
+      const response = await fetch("https://dummyjson.com/products");
+      const data = await response.json();
+      setProduct(data.products);
+    };
+    setIsLoading(false);
+    fetchProduct();
+  }, []);
 
   useEffect(() => {
     {
@@ -32,7 +39,7 @@ const Product = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setSearching(false);
-    }, 1500);
+    }, 0.1);
     return () => {
       clearTimeout(timer);
     };
@@ -52,17 +59,14 @@ const Product = () => {
     setSearchTerm(event.target.value);
   };
 
-  if (status === STATUSES.LOADING) {
-    return (
-      <div className={classes.loader}>
-        <LoadingSpinner />
-      </div>
-    );
-  }
-
   return (
     <Fragment>
       <Navbar />
+      {isLoading && (
+        <div className={classes.loader}>
+          <LoadingSpinner />
+        </div>
+      )}
       <div className={classes["input-area"]}>
         <input
           type="search"
