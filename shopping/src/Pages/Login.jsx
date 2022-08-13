@@ -4,10 +4,6 @@ import { useState } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
-  // const submitHandler = (event) => {
-  //   event.preventDefault();
-  // };
-
   const createNewAccountHandler = () => {
     navigate("/signup", { replace: true });
   };
