@@ -6,18 +6,30 @@ import SignUp from "./Pages/SignUp";
 import Product from "./Pages/Product";
 import ProductDetail from "./Pages/ProductDetail";
 import Profile from "./Pages/Profile";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [login, setLogin] = useState(false);
+
+  useEffect(() => {
+    const userSignUp = localStorage.getItem("userData");
+    const userLogin = localStorage.getItem("userLogin");
+    if (userSignUp !== "" || userLogin !== "") {
+      setLogin(true);
+    }
+  }, []);
   return (
     <Routes>
       <Route path="*" element={<Navigate to="/" replace />} />
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
-      <Route path="/products" element={<Product />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/profile" element={<Profile />} />
-      <Route path="/products/:productId" element={<ProductDetail />} />
+      {login && <Route path="/products" element={<Product />} />}
+      {login && <Route path="/cart" element={<Cart />} />}
+      {login && <Route path="/profile" element={<Profile />} />}
+      {login && (
+        <Route path="/products/:productId" element={<ProductDetail />} />
+      )}
     </Routes>
   );
 }
